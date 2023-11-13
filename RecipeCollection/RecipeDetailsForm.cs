@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -87,7 +88,7 @@ namespace RecipeCollection
         //Removes selected ingredient from the ingredients list
         private void RemoveIngredientButton_Click(object sender, EventArgs e)
         {
-            if (editIngredientsBox.SelectedItems != null)
+            if (editIngredientsBox.SelectedItem != null)
             {
                 string selectedItem = editIngredientsBox.SelectedItem.ToString();
                 recipe.Ingredients.Remove(selectedItem);
