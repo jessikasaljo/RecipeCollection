@@ -73,35 +73,18 @@ namespace RecipeCollection
         //Adds new ingredient to list
         private void IngredientToListButton_Click(object sender, EventArgs e)
         {
-            if (addIngredientBox.Text != null)
-            {
-                editIngredientsBox.Items.Add(addIngredientBox.Text);
-                addIngredientBox.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("You must enter an ingredient first");
-            }
+            recipeManager.AddIngredientToListBox(editIngredientsBox, addIngredientBox);
         }
 
 
-        //Removes selected ingredient from the ingredients list
+        //Removes selected ingredient from the ingredients list and the recipe
         private void RemoveIngredientButton_Click(object sender, EventArgs e)
         {
-            if (editIngredientsBox.SelectedItem != null)
-            {
-                string selectedItem = editIngredientsBox.SelectedItem.ToString();
-                recipe.Ingredients.Remove(selectedItem);
-                editIngredientsBox.Items.Remove(selectedItem);
-            }
-            else
-            {
-                MessageBox.Show("Choose an ingredient to remove");
-            }
+            recipeManager.RemoveIngredient(editIngredientsBox, recipe);
         }
 
 
-        //Adds the new details to the first panel and saves changes to CSV
+        //Adds the new details to the first panel, changes the object and saves changes to CSV
         private void DoneButton_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(recipeTextbox.Text) && servingsNumeric.Value != 0 && categoryCombobox.SelectedIndex != -1 && editIngredientsBox.Items.Count != 0 && !string.IsNullOrWhiteSpace(instructionsTextbox.Text))
@@ -112,19 +95,33 @@ namespace RecipeCollection
                 recipe.Ingredients.Clear();
                 recipe.ListboxItemsToList(editIngredientsBox);
                 recipe.Instructions = instructionsTextbox.Text;
+                recipeManager.SaveToCSV();
 
+                viewRecipesForm.UpdateListBox();
                 editPanel.Visible = false;
                 detailsPanel.Visible = true;
                 DisplayRecipeDetails();
                 RecipeDetailsForm Details = this;
                 Details.Text = "Recipe details";
-
-                recipeManager.SaveToCSV();
             }
             else
             {
                 MessageBox.Show("Some fields are empty or invalid");
             }
+        }
+
+
+        //Stops the user from changing the placeholder text in the dropdown menu with category options
+        private void CategoryCombobox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+
+        //Closes application after user's confirmation. If they press "No", the app goes back to the main menu.
+        private void RecipeDetailsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
 
@@ -156,13 +153,6 @@ namespace RecipeCollection
             instructionsTextbox.Text = recipe.Instructions;
             RecipeDetailsForm recipeDetails = this;
             recipeDetails.Text = "Edit recipe";
-        }
-
-
-        //Closes application after user's confirmation. If they press "No", the app goes back to the main menu.
-        private void RecipeDetailsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewRecipesForm));
             recipeBox = new ListBox();
-            GoBackButton = new Button();
-            OpenRecipeButton = new Button();
-            EditRecipeButton = new Button();
-            RemoveRecipeButton = new Button();
-            FilterButton = new Button();
+            goBackButton = new Button();
+            openRecipeButton = new Button();
+            editRecipeButton = new Button();
+            removeRecipeButton = new Button();
+            filterButton = new Button();
             filterCombobox = new ComboBox();
             SuspendLayout();
             // 
@@ -48,73 +48,74 @@
             recipeBox.Location = new Point(28, 106);
             recipeBox.Name = "recipeBox";
             recipeBox.Size = new Size(339, 344);
+            recipeBox.Sorted = true;
             recipeBox.TabIndex = 0;
             // 
-            // GoBackButton
+            // goBackButton
             // 
-            GoBackButton.BackColor = Color.LavenderBlush;
-            GoBackButton.BackgroundImage = Resources.BackArrow.arrowheadleft_110946;
-            GoBackButton.BackgroundImageLayout = ImageLayout.Zoom;
-            GoBackButton.FlatStyle = FlatStyle.Flat;
-            GoBackButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            GoBackButton.Location = new Point(28, 11);
-            GoBackButton.Name = "GoBackButton";
-            GoBackButton.Size = new Size(50, 27);
-            GoBackButton.TabIndex = 1;
-            GoBackButton.UseVisualStyleBackColor = false;
-            GoBackButton.Click += GoBackButton_Click;
+            goBackButton.BackColor = Color.LavenderBlush;
+            goBackButton.BackgroundImage = Resources.BackArrow.arrowheadleft_110946;
+            goBackButton.BackgroundImageLayout = ImageLayout.Zoom;
+            goBackButton.FlatStyle = FlatStyle.Flat;
+            goBackButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            goBackButton.Location = new Point(28, 11);
+            goBackButton.Name = "goBackButton";
+            goBackButton.Size = new Size(50, 27);
+            goBackButton.TabIndex = 1;
+            goBackButton.UseVisualStyleBackColor = false;
+            goBackButton.Click += GoBackButton_Click;
             // 
-            // OpenRecipeButton
+            // openRecipeButton
             // 
-            OpenRecipeButton.BackColor = Color.LavenderBlush;
-            OpenRecipeButton.FlatStyle = FlatStyle.Flat;
-            OpenRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            OpenRecipeButton.Location = new Point(28, 463);
-            OpenRecipeButton.Name = "OpenRecipeButton";
-            OpenRecipeButton.Size = new Size(93, 38);
-            OpenRecipeButton.TabIndex = 2;
-            OpenRecipeButton.Text = "Open";
-            OpenRecipeButton.UseVisualStyleBackColor = false;
-            OpenRecipeButton.Click += OpenRecipeButton_Click;
+            openRecipeButton.BackColor = Color.LavenderBlush;
+            openRecipeButton.FlatStyle = FlatStyle.Flat;
+            openRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            openRecipeButton.Location = new Point(28, 463);
+            openRecipeButton.Name = "openRecipeButton";
+            openRecipeButton.Size = new Size(93, 38);
+            openRecipeButton.TabIndex = 2;
+            openRecipeButton.Text = "Open";
+            openRecipeButton.UseVisualStyleBackColor = false;
+            openRecipeButton.Click += OpenRecipeButton_Click;
             // 
-            // EditRecipeButton
+            // editRecipeButton
             // 
-            EditRecipeButton.BackColor = Color.LavenderBlush;
-            EditRecipeButton.FlatStyle = FlatStyle.Flat;
-            EditRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            EditRecipeButton.Location = new Point(153, 463);
-            EditRecipeButton.Name = "EditRecipeButton";
-            EditRecipeButton.Size = new Size(93, 38);
-            EditRecipeButton.TabIndex = 3;
-            EditRecipeButton.Text = "Edit";
-            EditRecipeButton.UseVisualStyleBackColor = false;
-            EditRecipeButton.Click += EditRecipeButton_Click;
+            editRecipeButton.BackColor = Color.LavenderBlush;
+            editRecipeButton.FlatStyle = FlatStyle.Flat;
+            editRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            editRecipeButton.Location = new Point(153, 463);
+            editRecipeButton.Name = "editRecipeButton";
+            editRecipeButton.Size = new Size(93, 38);
+            editRecipeButton.TabIndex = 3;
+            editRecipeButton.Text = "Edit";
+            editRecipeButton.UseVisualStyleBackColor = false;
+            editRecipeButton.Click += EditRecipeButton_Click;
             // 
-            // RemoveRecipeButton
+            // removeRecipeButton
             // 
-            RemoveRecipeButton.BackColor = Color.LavenderBlush;
-            RemoveRecipeButton.FlatStyle = FlatStyle.Flat;
-            RemoveRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            RemoveRecipeButton.Location = new Point(274, 463);
-            RemoveRecipeButton.Name = "RemoveRecipeButton";
-            RemoveRecipeButton.Size = new Size(93, 38);
-            RemoveRecipeButton.TabIndex = 4;
-            RemoveRecipeButton.Text = "Remove";
-            RemoveRecipeButton.UseVisualStyleBackColor = false;
-            RemoveRecipeButton.Click += RemoveRecipeButton_Click;
+            removeRecipeButton.BackColor = Color.LavenderBlush;
+            removeRecipeButton.FlatStyle = FlatStyle.Flat;
+            removeRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            removeRecipeButton.Location = new Point(274, 463);
+            removeRecipeButton.Name = "removeRecipeButton";
+            removeRecipeButton.Size = new Size(93, 38);
+            removeRecipeButton.TabIndex = 4;
+            removeRecipeButton.Text = "Remove";
+            removeRecipeButton.UseVisualStyleBackColor = false;
+            removeRecipeButton.Click += RemoveRecipeButton_Click;
             // 
-            // FilterButton
+            // filterButton
             // 
-            FilterButton.BackColor = Color.LavenderBlush;
-            FilterButton.FlatStyle = FlatStyle.Flat;
-            FilterButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            FilterButton.Location = new Point(194, 64);
-            FilterButton.Name = "FilterButton";
-            FilterButton.Size = new Size(106, 30);
-            FilterButton.TabIndex = 5;
-            FilterButton.Text = "Filter recipes";
-            FilterButton.UseVisualStyleBackColor = false;
-            FilterButton.Click += FilterButton_Click;
+            filterButton.BackColor = Color.LavenderBlush;
+            filterButton.FlatStyle = FlatStyle.Flat;
+            filterButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            filterButton.Location = new Point(194, 64);
+            filterButton.Name = "filterButton";
+            filterButton.Size = new Size(106, 30);
+            filterButton.TabIndex = 5;
+            filterButton.Text = "Filter recipes";
+            filterButton.UseVisualStyleBackColor = false;
+            filterButton.Click += FilterButton_Click;
             // 
             // filterCombobox
             // 
@@ -122,11 +123,13 @@
             filterCombobox.FlatStyle = FlatStyle.Flat;
             filterCombobox.Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Point);
             filterCombobox.FormattingEnabled = true;
+            filterCombobox.ImeMode = ImeMode.On;
             filterCombobox.Location = new Point(28, 66);
             filterCombobox.Name = "filterCombobox";
             filterCombobox.Size = new Size(151, 26);
             filterCombobox.TabIndex = 6;
             filterCombobox.Text = "Filter by category";
+            filterCombobox.KeyPress += FilterCombobox_KeyPress;
             // 
             // ViewRecipesForm
             // 
@@ -135,11 +138,11 @@
             BackColor = Color.Plum;
             ClientSize = new Size(396, 526);
             Controls.Add(filterCombobox);
-            Controls.Add(FilterButton);
-            Controls.Add(RemoveRecipeButton);
-            Controls.Add(EditRecipeButton);
-            Controls.Add(OpenRecipeButton);
-            Controls.Add(GoBackButton);
+            Controls.Add(filterButton);
+            Controls.Add(removeRecipeButton);
+            Controls.Add(editRecipeButton);
+            Controls.Add(openRecipeButton);
+            Controls.Add(goBackButton);
             Controls.Add(recipeBox);
             Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -152,11 +155,11 @@
         }
 
         #endregion
-        private Button GoBackButton;
-        private Button OpenRecipeButton;
-        private Button EditRecipeButton;
-        private Button RemoveRecipeButton;
-        private Button FilterButton;
+        private Button goBackButton;
+        private Button openRecipeButton;
+        private Button editRecipeButton;
+        private Button removeRecipeButton;
+        private Button filterButton;
         private ComboBox filterCombobox;
         public ListBox recipeBox;
     }

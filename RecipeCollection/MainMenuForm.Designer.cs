@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenuForm));
             recipeCollectionLabel = new Label();
-            ViewRecipesButton = new Button();
-            AddNewRecipeButton = new Button();
+            viewRecipesButton = new Button();
+            addNewRecipeButton = new Button();
             SuspendLayout();
             // 
             // recipeCollectionLabel
@@ -44,31 +44,31 @@
             recipeCollectionLabel.TabIndex = 0;
             recipeCollectionLabel.Text = "Recipe collection";
             // 
-            // ViewRecipesButton
+            // viewRecipesButton
             // 
-            ViewRecipesButton.BackColor = Color.LavenderBlush;
-            ViewRecipesButton.FlatStyle = FlatStyle.Flat;
-            ViewRecipesButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            ViewRecipesButton.Location = new Point(140, 128);
-            ViewRecipesButton.Name = "ViewRecipesButton";
-            ViewRecipesButton.Size = new Size(124, 48);
-            ViewRecipesButton.TabIndex = 1;
-            ViewRecipesButton.Text = "View recipes";
-            ViewRecipesButton.UseVisualStyleBackColor = false;
-            ViewRecipesButton.Click += ViewRecipesButton_Click;
+            viewRecipesButton.BackColor = Color.LavenderBlush;
+            viewRecipesButton.FlatStyle = FlatStyle.Flat;
+            viewRecipesButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            viewRecipesButton.Location = new Point(140, 128);
+            viewRecipesButton.Name = "viewRecipesButton";
+            viewRecipesButton.Size = new Size(124, 48);
+            viewRecipesButton.TabIndex = 1;
+            viewRecipesButton.Text = "View recipes";
+            viewRecipesButton.UseVisualStyleBackColor = false;
+            viewRecipesButton.Click += ViewRecipesButton_Click;
             // 
-            // AddNewRecipeButton
+            // addNewRecipeButton
             // 
-            AddNewRecipeButton.BackColor = Color.LavenderBlush;
-            AddNewRecipeButton.FlatStyle = FlatStyle.Flat;
-            AddNewRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            AddNewRecipeButton.Location = new Point(299, 128);
-            AddNewRecipeButton.Name = "AddNewRecipeButton";
-            AddNewRecipeButton.Size = new Size(124, 48);
-            AddNewRecipeButton.TabIndex = 2;
-            AddNewRecipeButton.Text = "Add new recipe";
-            AddNewRecipeButton.UseVisualStyleBackColor = false;
-            AddNewRecipeButton.Click += AddNewRecipeButton_Click;
+            addNewRecipeButton.BackColor = Color.LavenderBlush;
+            addNewRecipeButton.FlatStyle = FlatStyle.Flat;
+            addNewRecipeButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            addNewRecipeButton.Location = new Point(299, 128);
+            addNewRecipeButton.Name = "addNewRecipeButton";
+            addNewRecipeButton.Size = new Size(124, 48);
+            addNewRecipeButton.TabIndex = 2;
+            addNewRecipeButton.Text = "Add new recipe";
+            addNewRecipeButton.UseVisualStyleBackColor = false;
+            addNewRecipeButton.Click += AddNewRecipeButton_Click;
             // 
             // MainMenuForm
             // 
@@ -76,8 +76,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Plum;
             ClientSize = new Size(565, 296);
-            Controls.Add(AddNewRecipeButton);
-            Controls.Add(ViewRecipesButton);
+            Controls.Add(addNewRecipeButton);
+            Controls.Add(viewRecipesButton);
             Controls.Add(recipeCollectionLabel);
             Font = new Font("Bahnschrift", 9F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
@@ -92,7 +92,7 @@
         #endregion
 
         private Label recipeCollectionLabel;
-        private Button ViewRecipesButton;
-        private Button AddNewRecipeButton;
+        private Button viewRecipesButton;
+        private Button addNewRecipeButton;
     }
 }

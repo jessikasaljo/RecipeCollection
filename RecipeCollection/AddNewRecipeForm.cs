@@ -31,15 +31,7 @@ namespace RecipeCollection
         //Adds written ingredient to listbox
         private void IngredientToListButton_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(addIngredientBox.Text))
-            {
-                ingredientsListbox.Items.Add(addIngredientBox.Text);
-                addIngredientBox.Text = "";
-            }
-            else
-            {
-                MessageBox.Show("You must enter an ingredient first");
-            }
+            recipeManager.AddIngredientToListBox(ingredientsListbox, addIngredientBox);
         }
 
 
@@ -78,6 +70,13 @@ namespace RecipeCollection
         private void AddNewRecipeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+
+        //Removes selected ingredient from listbox
+        private void RemoveIngredientButton_Click(object sender, EventArgs e)
+        {
+            recipeManager.RemoveIngredient(ingredientsListbox, null);
         }
     }
 }

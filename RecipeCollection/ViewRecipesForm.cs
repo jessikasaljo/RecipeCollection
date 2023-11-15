@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RecipeCollection
 {
@@ -42,7 +43,7 @@ namespace RecipeCollection
 
 
         //Event handling
-        //Adds all the existing recipes into the recipe listbox.
+        //Adds all the existing recipes into the recipe listbox
         private void ViewRecipesForm_Load(object sender, EventArgs e)
         {
             foreach (Recipe recipe in recipeManager.allRecipes)
@@ -152,6 +153,25 @@ namespace RecipeCollection
         private void ViewRecipesForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+
+        //Stops the user from changing the placeholder text in the dropdown menu with category options
+        private void FilterCombobox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+
+        //Other functions
+        //Updates the listbox with recipe names after it's been edited
+        public void UpdateListBox()
+        {
+            recipeBox.Items.Clear();
+            foreach (Recipe recipe in recipeManager.allRecipes)
+            {
+                recipeBox.Items.Add(recipe);
+            }
         }
     }
 }

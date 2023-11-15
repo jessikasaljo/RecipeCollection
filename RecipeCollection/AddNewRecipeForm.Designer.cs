@@ -35,14 +35,15 @@
             servingsCount = new NumericUpDown();
             categoryLabel = new Label();
             categoryListbox = new ListBox();
-            DoneButton = new Button();
+            doneButton = new Button();
             ingredientsLabel = new Label();
             addIngredientBox = new TextBox();
-            IngredientToListButton = new Button();
+            ingredientToListButton = new Button();
             ingredientsListbox = new ListBox();
             instructionsLabel = new Label();
             GoBackButton = new Button();
             instructionsBox = new TextBox();
+            removeIngredientButton = new Button();
             ((System.ComponentModel.ISupportInitialize)servingsCount).BeginInit();
             SuspendLayout();
             // 
@@ -111,18 +112,18 @@
             categoryListbox.Size = new Size(152, 92);
             categoryListbox.TabIndex = 5;
             // 
-            // DoneButton
+            // doneButton
             // 
-            DoneButton.BackColor = Color.LavenderBlush;
-            DoneButton.FlatStyle = FlatStyle.Flat;
-            DoneButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            DoneButton.Location = new Point(800, 445);
-            DoneButton.Name = "DoneButton";
-            DoneButton.Size = new Size(93, 38);
-            DoneButton.TabIndex = 6;
-            DoneButton.Text = "Done";
-            DoneButton.UseVisualStyleBackColor = false;
-            DoneButton.Click += DoneButton_Click;
+            doneButton.BackColor = Color.LavenderBlush;
+            doneButton.FlatStyle = FlatStyle.Flat;
+            doneButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            doneButton.Location = new Point(800, 569);
+            doneButton.Name = "doneButton";
+            doneButton.Size = new Size(93, 38);
+            doneButton.TabIndex = 6;
+            doneButton.Text = "Done";
+            doneButton.UseVisualStyleBackColor = false;
+            doneButton.Click += DoneButton_Click;
             // 
             // ingredientsLabel
             // 
@@ -145,20 +146,20 @@
             addIngredientBox.Size = new Size(220, 26);
             addIngredientBox.TabIndex = 8;
             // 
-            // IngredientToListButton
+            // ingredientToListButton
             // 
-            IngredientToListButton.BackColor = Color.LavenderBlush;
-            IngredientToListButton.FlatStyle = FlatStyle.Flat;
-            IngredientToListButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            IngredientToListButton.ImageAlign = ContentAlignment.MiddleLeft;
-            IngredientToListButton.Location = new Point(309, 128);
-            IngredientToListButton.Name = "IngredientToListButton";
-            IngredientToListButton.Size = new Size(220, 31);
-            IngredientToListButton.TabIndex = 9;
-            IngredientToListButton.Text = "Add ingredient to list";
-            IngredientToListButton.TextAlign = ContentAlignment.MiddleLeft;
-            IngredientToListButton.UseVisualStyleBackColor = false;
-            IngredientToListButton.Click += IngredientToListButton_Click;
+            ingredientToListButton.BackColor = Color.LavenderBlush;
+            ingredientToListButton.FlatStyle = FlatStyle.Flat;
+            ingredientToListButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ingredientToListButton.ImageAlign = ContentAlignment.MiddleLeft;
+            ingredientToListButton.Location = new Point(309, 130);
+            ingredientToListButton.Name = "ingredientToListButton";
+            ingredientToListButton.Size = new Size(220, 31);
+            ingredientToListButton.TabIndex = 9;
+            ingredientToListButton.Text = "Add ingredient to list";
+            ingredientToListButton.TextAlign = ContentAlignment.MiddleLeft;
+            ingredientToListButton.UseVisualStyleBackColor = false;
+            ingredientToListButton.Click += IngredientToListButton_Click;
             // 
             // ingredientsListbox
             // 
@@ -167,9 +168,9 @@
             ingredientsListbox.Font = new Font("Bahnschrift Light", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ingredientsListbox.FormattingEnabled = true;
             ingredientsListbox.ItemHeight = 18;
-            ingredientsListbox.Location = new Point(309, 176);
+            ingredientsListbox.Location = new Point(309, 210);
             ingredientsListbox.Name = "ingredientsListbox";
-            ingredientsListbox.Size = new Size(251, 254);
+            ingredientsListbox.Size = new Size(251, 344);
             ingredientsListbox.TabIndex = 10;
             // 
             // instructionsLabel
@@ -202,27 +203,43 @@
             instructionsBox.BorderStyle = BorderStyle.FixedSingle;
             instructionsBox.Font = new Font("Bahnschrift Light", 9F, FontStyle.Regular, GraphicsUnit.Point);
             instructionsBox.Location = new Point(613, 96);
-            instructionsBox.MaximumSize = new Size(280, 334);
-            instructionsBox.MinimumSize = new Size(280, 334);
+            instructionsBox.MaximumSize = new Size(280, 460);
+            instructionsBox.MinimumSize = new Size(280, 460);
             instructionsBox.Multiline = true;
             instructionsBox.Name = "instructionsBox";
-            instructionsBox.Size = new Size(280, 334);
+            instructionsBox.Size = new Size(280, 460);
             instructionsBox.TabIndex = 14;
+            // 
+            // removeIngredientButton
+            // 
+            removeIngredientButton.BackColor = Color.LavenderBlush;
+            removeIngredientButton.FlatStyle = FlatStyle.Flat;
+            removeIngredientButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            removeIngredientButton.ImageAlign = ContentAlignment.MiddleLeft;
+            removeIngredientButton.Location = new Point(309, 171);
+            removeIngredientButton.Name = "removeIngredientButton";
+            removeIngredientButton.Size = new Size(220, 31);
+            removeIngredientButton.TabIndex = 15;
+            removeIngredientButton.Text = "Remove selected ingredient";
+            removeIngredientButton.TextAlign = ContentAlignment.MiddleLeft;
+            removeIngredientButton.UseVisualStyleBackColor = false;
+            removeIngredientButton.Click += RemoveIngredientButton_Click;
             // 
             // AddNewRecipeForm
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Plum;
-            ClientSize = new Size(935, 505);
+            ClientSize = new Size(935, 621);
+            Controls.Add(removeIngredientButton);
             Controls.Add(instructionsBox);
             Controls.Add(GoBackButton);
             Controls.Add(instructionsLabel);
             Controls.Add(ingredientsListbox);
-            Controls.Add(IngredientToListButton);
+            Controls.Add(ingredientToListButton);
             Controls.Add(addIngredientBox);
             Controls.Add(ingredientsLabel);
-            Controls.Add(DoneButton);
+            Controls.Add(doneButton);
             Controls.Add(categoryListbox);
             Controls.Add(categoryLabel);
             Controls.Add(servingsCount);
@@ -248,13 +265,14 @@
         private NumericUpDown servingsCount;
         private Label categoryLabel;
         private ListBox categoryListbox;
-        private Button DoneButton;
+        private Button doneButton;
         private Label ingredientsLabel;
         private TextBox addIngredientBox;
-        private Button IngredientToListButton;
+        private Button ingredientToListButton;
         private ListBox ingredientsListbox;
         private Label instructionsLabel;
         private Button GoBackButton;
         private TextBox instructionsBox;
+        private Button removeIngredientButton;
     }
 }

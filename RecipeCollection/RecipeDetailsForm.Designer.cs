@@ -51,7 +51,7 @@
             instructionsTextbox = new TextBox();
             label2 = new Label();
             label5 = new Label();
-            DoneButton = new Button();
+            doneButton = new Button();
             label7 = new Label();
             detailsPanel.SuspendLayout();
             editPanel.SuspendLayout();
@@ -207,7 +207,7 @@
             editPanel.Controls.Add(instructionsTextbox);
             editPanel.Controls.Add(label2);
             editPanel.Controls.Add(label5);
-            editPanel.Controls.Add(DoneButton);
+            editPanel.Controls.Add(doneButton);
             editPanel.Controls.Add(label7);
             editPanel.Location = new Point(12, 9);
             editPanel.Name = "editPanel";
@@ -292,6 +292,7 @@
             categoryCombobox.Size = new Size(151, 26);
             categoryCombobox.TabIndex = 14;
             categoryCombobox.Text = "Category";
+            categoryCombobox.KeyPress += CategoryCombobox_KeyPress;
             // 
             // recipeTextbox
             // 
@@ -339,18 +340,18 @@
             label5.TabIndex = 5;
             label5.Text = "Ingredients";
             // 
-            // DoneButton
+            // doneButton
             // 
-            DoneButton.BackColor = Color.LavenderBlush;
-            DoneButton.FlatStyle = FlatStyle.Flat;
-            DoneButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            DoneButton.Location = new Point(675, 3);
-            DoneButton.Name = "DoneButton";
-            DoneButton.Size = new Size(93, 38);
-            DoneButton.TabIndex = 10;
-            DoneButton.Text = "Done";
-            DoneButton.UseVisualStyleBackColor = false;
-            DoneButton.Click += DoneButton_Click;
+            doneButton.BackColor = Color.LavenderBlush;
+            doneButton.FlatStyle = FlatStyle.Flat;
+            doneButton.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            doneButton.Location = new Point(675, 3);
+            doneButton.Name = "doneButton";
+            doneButton.Size = new Size(93, 38);
+            doneButton.TabIndex = 10;
+            doneButton.Text = "Done";
+            doneButton.UseVisualStyleBackColor = false;
+            doneButton.Click += DoneButton_Click;
             // 
             // label7
             // 
@@ -401,7 +402,7 @@
         private Button removeIngredientButton;
         private Label label2;
         private Label label5;
-        private Button DoneButton;
+        private Button doneButton;
         private Label label7;
         private TextBox instructionsTextbox;
         private TextBox recipeTextbox;

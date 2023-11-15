@@ -10,7 +10,6 @@ namespace RecipeCollection
     {
         //Creates a static instance that's used throughout the program
         private static RecipeManager instance;
-
         public static RecipeManager Instance
         {
             get
@@ -35,26 +34,8 @@ namespace RecipeCollection
         public RecipeManager()
         {
             allRecipes = new List<Recipe>();
-            LoadFromCSV();
-        }
 
-
-        //Saves recipes to CSV file
-        public void SaveToCSV()
-        {
-            using (StreamWriter writer = new StreamWriter(path))
-            {
-                foreach (Recipe recipe in allRecipes)
-                {
-                    writer.WriteLine(recipe.GetCSV());
-                }
-            }
-        }
-
-
-        //Loads recipes from CSV file
-        public void LoadFromCSV()
-        {
+            //Loads recipes from CSV file
             if (!File.Exists(path))
             {
                 File.Create(path).Close();
@@ -90,6 +71,58 @@ namespace RecipeCollection
                 {
                     Console.WriteLine(ex.Message);
                 }
+            }
+        }
+
+
+        //Saves recipes to CSV file
+        public void SaveToCSV()
+        {
+            using (StreamWriter writer = new StreamWriter(path))
+            {
+                foreach (Recipe recipe in allRecipes)
+                {
+                    writer.WriteLine(recipe.GetCSV());
+                }
+            }
+        }
+
+
+        //Adds the ingredient the user has written in the textbox to the ingredients listbox
+        public void AddIngredientToListBox(ListBox listBox, TextBox textBox)
+        {
+            if (!string.IsNullOrWhiteSpace(textBox.Text) && !listBox.Items.Contains(textBox.Text))
+            {
+                listBox.Items.Add(textBox.Text);
+                textBox.Text = "";
+            }
+            else if (listBox.Items.Contains(textBox.Text))
+            {
+                MessageBox.Show("You've already added this ingredient");
+            }
+            else
+            {
+                MessageBox.Show("You must enter an ingredient first");
+            }
+        }
+
+
+        //Removes selected ingredient from listbox and from the recipe, if it's already been created
+        public void RemoveIngredient(ListBox listbox, Recipe recipe)
+        {
+            if (listbox.SelectedItem != null)
+            {
+                string selectedItem = listbox.SelectedItem.ToString();
+                listbox.Items.Remove(selectedItem);
+
+                if (recipe != null)
+                {
+                    recipe.Ingredients.Remove(selectedItem);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Choose an ingredient to remove");
             }
         }
     }
