@@ -20,3 +20,4 @@ C:\Users\Min Dator\source\repos\RecipeCollection\RecipeCollection\obj\Debug\net6
 C:\Users\Min Dator\source\repos\RecipeCollection\RecipeCollection\obj\Debug\net6.0-windows\RecipeCollection.Resources.ChefHatIcon.resources
 C:\Users\Min Dator\source\repos\RecipeCollection\RecipeCollection\obj\Debug\net6.0-windows\RecipeCollection.RecipeDetailsForm.resources
 C:\Users\Min Dator\source\repos\RecipeCollection\RecipeCollection\obj\Debug\net6.0-windows\RecipeCollection.MainMenuForm.resources
+C:\Users\Min Dator\source\repos\RecipeCollection\RecipeCollection\obj\Debug\net6.0-windows\RecipeCollection.sourcelink.json
