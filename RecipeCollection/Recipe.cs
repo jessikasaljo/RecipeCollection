@@ -10,7 +10,7 @@ namespace RecipeCollection
     {
         //Properties and empty list of ingredients
         public string RecipeName { get; set; }
-        public decimal Servings { get; set; }
+        public int Servings { get; set; }
         public string Category { get; set; }
         public List<string> Ingredients { get; set; }
         public string Instructions { get; set; }
@@ -18,7 +18,7 @@ namespace RecipeCollection
 
 
         //Constructor
-        public Recipe(string recipeName, decimal servings, string category, List<string> ingredients, string instructions)
+        public Recipe(string recipeName, int servings, string category, List<string> ingredients, string instructions)
         {
             RecipeName = recipeName;
             Servings = servings;

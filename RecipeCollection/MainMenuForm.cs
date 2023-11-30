@@ -15,10 +15,30 @@ namespace RecipeCollection
             InitializeComponent();
             recipeManager = RecipeManager.Instance;
 
-            //Example recipe for testing the logic
-            List<string> ingredients = new List<string>() { "Ägg, 3 st", "Mjöl, 3 dl", "Mjölk, 6 dl" };
-            Recipe exampleRecipe = new Recipe("Example recipe", 4, "Main courses", ingredients, "Blanda allt.\r\nStek i smör.");
-            recipeManager.allRecipes.Add(exampleRecipe);
+            //Example recipes for testing the logic
+            //Pannkakor
+            List<string> pannkakorIngredients = new List<string>()
+            { "Ägg, 3 st", "Mjöl, 3 dl", "Mjölk, 6 dl" };
+            Recipe pannkakorRecipe = new Recipe("Pannkakor", 4, "Main courses", pannkakorIngredients,
+                                              "Vispa mjöl och hälften av mjölken.\r\nTillsätt resten av mjölken och äggen och vispa igen." +
+                                              "\r\nHetta upp en panna med smör och stek en knapp dl smet åt gången.\r\nServera med sylt och grädde.");
+            recipeManager.allRecipes.Add(pannkakorRecipe);
+
+            //Chokladbollar
+            List<string> chokladbollarIngredients = new List<string>()
+            { "Smör, 150 g", "Strösocker, 1.5 dl", "Kakao, 3 msk", "Vaniljsocker, 1 tsk", "Kallt kaffe, 2 msk", "Havregryn, 4 dl"};
+            Recipe chokladbollarRecipe = new Recipe("Chokladbollar", 8, "Desserts", chokladbollarIngredients,
+                                                    "Blanda alla ingredienser.\r\nForma runda bollar och rulla dem i kokos eller pärlsocker." +
+                                                    "\r\nFörvara i kylen.");
+            recipeManager.allRecipes.Add(chokladbollarRecipe);
+
+            //Tzatziki
+            List<string> tzatzikiIngredients = new List<string>()
+            { "Grekisk yoghurt, 3 dl", "Gurka, 1 st", "Vitlök, 1 klyfta", "Salt", "Peppar" };
+            Recipe tzatzikiRecipe = new Recipe("Tzatziki", 4, "Sauces", tzatzikiIngredients,
+                                               "Riv gurkan, salta och lägg den i en sil så att vätskan rinner av.\r\n Pressa vitlöksklyftan." +
+                                               "\r\nBlanda alla ingredienser och salta och peppra efter smak.");
+            recipeManager.allRecipes.Add(tzatzikiRecipe);
         }
 
 

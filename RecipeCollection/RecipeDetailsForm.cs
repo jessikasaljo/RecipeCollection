@@ -90,7 +90,7 @@ namespace RecipeCollection
             if (!string.IsNullOrWhiteSpace(recipeTextbox.Text) && servingsNumeric.Value != 0 && categoryCombobox.SelectedIndex != -1 && editIngredientsBox.Items.Count != 0 && !string.IsNullOrWhiteSpace(instructionsTextbox.Text))
             {
                 recipe.RecipeName = recipeTextbox.Text;
-                recipe.Servings = servingsNumeric.Value;
+                recipe.Servings = (int)servingsNumeric.Value;
                 recipe.Category = (string)categoryCombobox.SelectedItem;
                 recipe.Ingredients.Clear();
                 recipe.ListboxItemsToList(editIngredientsBox);

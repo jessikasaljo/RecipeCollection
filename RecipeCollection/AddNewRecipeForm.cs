@@ -50,7 +50,7 @@ namespace RecipeCollection
             if (!string.IsNullOrWhiteSpace(recipeNameBox.Text) && servingsCount.Value != 0 && categoryListbox.SelectedIndex != -1 && ingredientsListbox.Items.Count != 0 && !string.IsNullOrWhiteSpace(instructionsBox.Text))
             {
                 List<string> ingredients = new List<string>();
-                Recipe newRecipe = new Recipe(recipeNameBox.Text, servingsCount.Value, (string)categoryListbox.SelectedItem, ingredients, instructionsBox.Text);
+                Recipe newRecipe = new Recipe(recipeNameBox.Text, (int)servingsCount.Value, (string)categoryListbox.SelectedItem, ingredients, instructionsBox.Text);
                 newRecipe.ListboxItemsToList(ingredientsListbox);
                 recipeManager.allRecipes.Add(newRecipe);
                 recipeManager.SaveToCSV();

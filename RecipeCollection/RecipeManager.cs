@@ -49,7 +49,7 @@ namespace RecipeCollection
                     {
                         string[] strings = line.Split("|");
                         string recipeName = strings[0];
-                        decimal servings = Convert.ToDecimal(strings[1]);
+                        decimal servings = Convert.ToInt32(strings[1]);
                         string category = strings[2];
 
                         List<string> ingredients = new List<string>();
@@ -61,7 +61,7 @@ namespace RecipeCollection
                         string[] instructionArray = strings.Skip(separatorIndex + 1).ToArray();
                         string instructions = string.Join(",", instructionArray).Replace("*", "\r\n");
 
-                        Recipe recipe = new Recipe(recipeName, servings, category, ingredients, instructions);
+                        Recipe recipe = new Recipe(recipeName, (int)servings, category, ingredients, instructions);
                         allRecipes.Add(recipe);
 
                         line = reader.ReadLine();

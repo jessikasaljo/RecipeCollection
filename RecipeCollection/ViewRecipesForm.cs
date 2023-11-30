@@ -33,6 +33,7 @@ namespace RecipeCollection
                 "Desserts",
                 "Side dishes",
                 "Sauces",
+                "All recipes"
             };
 
             foreach (string category in categories)
@@ -130,7 +131,7 @@ namespace RecipeCollection
         //Filters and displays recipes based on the selected recipe name
         private void FilterButton_Click(object sender, EventArgs e)
         {
-            if (filterCombobox.SelectedItem != null)
+            if (filterCombobox.SelectedItem != null && filterCombobox.SelectedItem != "All recipes")
             {
                 recipeBox.Items.Clear();
 
@@ -141,6 +142,10 @@ namespace RecipeCollection
                         recipeBox.Items.Add(recipe);
                     }
                 }
+            }
+            else if (filterCombobox.SelectedItem == "All recipes")
+            {
+                UpdateListBox();
             }
             else
             {
