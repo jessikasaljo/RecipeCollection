@@ -66,6 +66,13 @@ namespace RecipeCollection
         }
 
 
+        //Removes selected ingredient from listbox
+        private void RemoveIngredientButton_Click(object sender, EventArgs e)
+        {
+            recipeManager.RemoveIngredient(ingredientsListbox, null);
+        }
+
+
         //Closes application after user's confirmation. If they press "No", the app goes back to the main menu.
         private void AddNewRecipeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -73,10 +80,6 @@ namespace RecipeCollection
         }
 
 
-        //Removes selected ingredient from listbox
-        private void RemoveIngredientButton_Click(object sender, EventArgs e)
-        {
-            recipeManager.RemoveIngredient(ingredientsListbox, null);
-        }
+
     }
 }
